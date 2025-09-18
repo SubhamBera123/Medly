@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>About — Medly</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="page-about">
+
+  <!-- NAVBAR (same structure to keep consistent) -->
+  <nav class="navbar navbar-expand-lg bg-white navbar-light shadow-sm py-3">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <span class="brand-icon d-inline-flex align-items-center justify-content-center me-2">
+          <i class="bi bi-heart-pulse-fill"></i>
+        </span>
+        <span class="fw-bold">Medly</span>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu"
+        aria-controls="navmenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navmenu">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+
+        <div class="ms-lg-3 d-flex align-items-center">
+          <button id="themeToggle" class="btn btn-outline-primary me-2" aria-label="Toggle theme">
+            <i class="bi bi-moon"></i>
+          </button>
+          <a class="btn btn-primary" href="contact.html">Get Consult</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ABOUT HERO -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-6">
+          <h2 class="fw-bold">Who we are</h2>
+          <p class="text-muted">Medly is a demo Bootstrap UI built to show polished components, interactive cards,
+            and an appealing layout you can rebrand and extend.</p>
+          <ul class="list-unstyled">
+            <li class="mb-2"><i class="bi bi-check2-circle text-primary me-2"></i>Clean, responsive layouts</li>
+            <li class="mb-2"><i class="bi bi-check2-circle text-primary me-2"></i>Accessible forms & UI</li>
+            <li class="mb-2"><i class="bi bi-check2-circle text-primary me-2"></i>Animations & micro-interactions</li>
+          </ul>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="card shadow-sm p-3">
+            <div class="row g-2">
+              <div class="col-6">
+                <div class="box-info p-3 h-100">
+                  <h5 class="mb-0">100+</h5>
+                  <small class="text-muted">Doctors</small>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="box-info p-3 h-100">
+                  <h5 class="mb-0">95%</h5>
+                  <small class="text-muted">Satisfaction</small>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="box-info p-3 h-100">
+                  <h5 class="mb-0">24/7</h5>
+                  <small class="text-muted">Support</small>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="box-info p-3 h-100">
+                  <h5 class="mb-0">500+</h5>
+                  <small class="text-muted">Consultations</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> <!-- /row -->
+    </div>
+  </section>
+
+  <!-- SERVICES (cards) -->
+  <section class="py-5 bg-transparent-white">
+    <div class="container">
+      <div class="text-center mb-4">
+        <h3 class="fw-bold">Our Services</h3>
+        <p class="text-muted">Box-like service cards with icons and short descriptions.</p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-4">
+          <div class="service-card p-4 shadow-sm h-100">
+            <i class="bi bi-stethoscope fs-2 mb-3 text-primary"></i>
+            <h5>General Checkup</h5>
+            <p class="text-muted small">Routine examinations and health checks.</p>
+            <a href="contact.html" class="small text-primary">Book now <i class="bi bi-arrow-right ms-1"></i></a>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="service-card p-4 shadow-sm h-100">
+            <i class="bi bi-activity fs-2 mb-3 text-primary"></i>
+            <h5>Cardiology</h5>
+            <p class="text-muted small">Heart health and specialized care.</p>
+            <a href="contact.html" class="small text-primary">Book now <i class="bi bi-arrow-right ms-1"></i></a>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="service-card p-4 shadow-sm h-100">
+            <i class="bi bi-bricks fs-2 mb-3 text-primary"></i>
+            <h5>Physiotherapy</h5>
+            <p class="text-muted small">Exercise plans and recovery programs.</p>
+            <a href="contact.html" class="small text-primary">Book now <i class="bi bi-arrow-right ms-1"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEAM (box cards) -->
+  <section class="py-5">
+    <div class="container">
+      <div class="text-center mb-4">
+        <h3 class="fw-bold">Meet the team</h3>
+        <p class="text-muted">A few of our specialists — each card is a box with hover lift.</p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-sm-6 col-lg-3">
+          <div class="team-card text-center p-4 shadow-sm h-100">
+            <img src="https://picsum.photos/seed/doc1/160/160" class="rounded-circle mb-3" alt="doc">
+            <h6 class="mb-0">Dr. Ayesha Roy</h6>
+            <small class="text-muted d-block mb-2">Cardiologist</small>
+            <p class="small text-muted">10+ years experience</p>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-3">
+          <div class="team-card text-center p-4 shadow-sm h-100">
+            <img src="https://picsum.photos/seed/doc2/160/160" class="rounded-circle mb-3" alt="doc">
+            <h6 class="mb-0">Dr. Manoj Gupta</h6>
+            <small class="text-muted d-block mb-2">Physiotherapist</small>
+            <p class="small text-muted">Rehab & recovery specialist</p>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-3">
+          <div class="team-card text-center p-4 shadow-sm h-100">
+            <img src="https://picsum.photos/seed/doc3/160/160" class="rounded-circle mb-3" alt="doc">
+            <h6 class="mb-0">Dr. Priya Sen</h6>
+            <small class="text-muted d-block mb-2">General Practitioner</small>
+            <p class="small text-muted">Primary care & diagnostics</p>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-3">
+          <div class="team-card text-center p-4 shadow-sm h-100">
+            <img src="https://picsum.photos/seed/doc4/160/160" class="rounded-circle mb-3" alt="doc">
+            <h6 class="mb-0">Dr. Ravi Kumar</h6>
+            <small class="text-muted d-block mb-2">Pediatrician</small>
+            <p class="small text-muted">Child health & wellness</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="py-4 bg-white">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          <p class="mb-0">© <strong>Medly</strong> 2025 · Crafted for better care</p>
+        </div>
+        <div class="col-md-6 text-md-end d-flex justify-content-md-end align-items-center gap-3">
+          <a class="text-muted" href="#top">Back to top</a>
+          <a class="text-muted" href="about.html">About</a>
+          <a class="text-muted" href="contact.html">Contact</a>
+          <span class="d-inline-flex gap-3 ms-2">
+            <a class="text-muted" href="#"><i class="bi bi-twitter"></i></a>
+            <a class="text-muted" href="#"><i class="bi bi-facebook"></i></a>
+            <a class="text-muted" href="#"><i class="bi bi-instagram"></i></a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS + Custom JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/scripts.js"></script>
+</body>
+</html>
