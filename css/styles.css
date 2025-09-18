@@ -48,78 +48,209 @@ body{
 .mini-card{
   background:linear-gradient(180deg,#fff,#fbfdff);
   border-radius:10px;
+  padding:20px;
+  border:1px solid rgba(91,141,239,0.08);
+  transition: all .25s ease;
 }
+.mini-card:hover{ transform: translateY(-2px); box-shadow: 0 8px 25px rgba(91,141,239,0.12); }
 
-/* Feature card style — box-like */
-.feature-card, .service-card, .team-card, .mini-card, .box-info{
-  border-radius:12px;
-  background:white;
-  transition: transform .25s ease, box-shadow .25s ease;
-}
-.feature-card:hover, .service-card:hover, .team-card:hover, .mini-card:hover{
-  transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(13,49,85,0.08);
-}
-
-/* Icons inside cards */
-.feature-card .icon, .service-card i{
-  color: var(--accent);
-  font-size: 28px;
-}
-
-/* Small box stats (about page) */
-.box-info{
-  background:linear-gradient(180deg,#fff,#fbfdff);
-  border-radius:10px;
-  text-align:center;
-}
-.box-info h5{ font-size:20px; margin-bottom:4px; }
-.box-info small{ color:var(--muted); }
-
-/* Card shadows and consistent padding */
+/* Cards */
 .card{
-  border-radius: var(--card-radius);
+  border:none;
+  border-radius:var(--card-radius);
+  box-shadow:0 4px 12px rgba(0,0,0,0.05);
+  transition: all .25s ease;
 }
-
-/* footer */
-footer{ border-top:1px solid rgba(10,20,40,0.04); }
-
-/* Responsive tweaks */
-@media (max-width: 991px){
-  .hero{ padding-top:30px; padding-bottom:30px; }
-}
-
-/* Theme: dark styles applied when data-theme=dark on root */
-:root[data-theme="dark"] body, :root[data-theme="dark"] .feature-card, :root[data-theme="dark"] .service-card {
-  background: #071123;
-  color: #e6eef9;
-}
-:root[data-theme="dark"] .feature-card, :root[data-theme="dark"] .service-card, :root[data-theme="dark"] .mini-card {
-  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-  border: 1px solid rgba(255,255,255,0.03);
-}
+.card:hover{ transform: translateY(-4px); box-shadow: 0 12px 28px rgba(0,0,0,0.08); }
 
 /* Buttons */
 .btn-primary{
-  background: linear-gradient(90deg,var(--accent),var(--accent-2));
-  border: none;
-  box-shadow: 0 8px 24px rgba(91,141,239,0.15);
+  background:linear-gradient(135deg,var(--accent),var(--accent-2));
+  border:none;
+  border-radius:8px;
+  padding:12px 24px;
+  font-weight:600;
+  transition: all .25s ease;
 }
-.btn-outline-primary{
-  border-color: rgba(91,141,239,0.14);
-}
+.btn-primary:hover{ transform: translateY(-2px); box-shadow: 0 8px 20px rgba(91,141,239,0.3); }
 
-/* small helper */
-.text-white-50{ color: rgba(255,255,255,0.85); }
-
-/* Make iframes responsive */
-iframe{ border-radius:8px; }
-
-/* Form invalid show */
-.was-validated .form-control:invalid {
-  border-color: #dc3545;
-  box-shadow: none;
+/* Dark mode styles */
+:root[data-theme="dark"] body{
+  background: linear-gradient(180deg, #0f1724 0%, #1a2332 100%);
+  color: #e6eef9;
 }
 
-/* subtle transition for everything to feel smooth */
-*{ transition: all 0.18s ease; }
+:root[data-theme="dark"] .card{
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: #e6eef9;
+}
+
+:root[data-theme="dark"] .mini-card{
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: #e6eef9;
+}
+
+/* Dark mode: About page specific styling */
+:root[data-theme="dark"] .page-about section.py-5:first-of-type h2,
+:root[data-theme="dark"] .page-about section.py-5:first-of-type p,
+:root[data-theme="dark"] .page-about section.py-5:first-of-type .text-muted,
+:root[data-theme="dark"] .page-about section.py-5:first-of-type li,
+:root[data-theme="dark"] .page-about section.py-5:first-of-type h5,
+:root[data-theme="dark"] .page-about section.py-5:first-of-type small {
+  color: #ffffff !important;
+}
+
+/* Dark mode: About page services section - transparent background */
+:root[data-theme="dark"] .page-about section.py-5.bg-light {
+  background: transparent !important;
+}
+
+/* Dark mode: About page service cards - navy blue background with white text */
+:root[data-theme="dark"] .page-about .service-card {
+  background: #0f1e3a !important;
+  border-color: rgba(126,166,255,0.18) !important;
+}
+:root[data-theme="dark"] .page-about .service-card h5,
+:root[data-theme="dark"] .page-about .service-card p,
+:root[data-theme="dark"] .page-about .service-card small,
+:root[data-theme="dark"] .page-about .service-card a {
+  color: #ffffff !important;
+}
+:root[data-theme="dark"] .page-about .service-card .text-muted {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+:root[data-theme="dark"] .page-about .service-card a.small {
+  color: #7ea6ff !important;
+}
+:root[data-theme="dark"] .page-about .service-card a.small:hover {
+  color: #9b83ff !important;
+}
+:root[data-theme="dark"] .page-about .service-card i {
+  color: #7ea6ff !important;
+}
+
+/* Dark mode: About page team section - white text */
+:root[data-theme="dark"] .page-about .team-card h6,
+:root[data-theme="dark"] .page-about .team-card small,
+:root[data-theme="dark"] .page-about .team-card p {
+  color: #ffffff !important;
+}
+
+/* Dark mode: Footer - navy blue background */
+:root[data-theme="dark"] footer {
+  background: #0f1e3a !important;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+:root[data-theme="dark"] footer p,
+:root[data-theme="dark"] footer a,
+:root[data-theme="dark"] footer strong {
+  color: #ffffff !important;
+}
+:root[data-theme="dark"] footer a:hover {
+  color: #7ea6ff !important;
+}
+
+/* Dark mode: Navbar styling */
+:root[data-theme="dark"] .navbar {
+  background: rgba(10, 14, 26, 0.8) !important;
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+:root[data-theme="dark"] .navbar-brand,
+:root[data-theme="dark"] .nav-link {
+  color: #7ea6ff !important;
+}
+
+:root[data-theme="dark"] .nav-link:hover {
+  color: #9b83ff !important;
+  transform: scale(1.05);
+}
+
+:root[data-theme="dark"] .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+}
+
+/* Dark mode: Home page features section */
+:root[data-theme="dark"] #features {
+  background: transparent !important;
+}
+
+:root[data-theme="dark"] .feature-card {
+  background: #0f1e3a !important;
+  border-color: rgba(126,166,255,0.18) !important;
+}
+
+:root[data-theme="dark"] .feature-card h5,
+:root[data-theme="dark"] .feature-card p,
+:root[data-theme="dark"] .feature-card a {
+  color: #ffffff !important;
+}
+
+:root[data-theme="dark"] .feature-card a:hover {
+  color: #9b83ff !important;
+}
+
+:root[data-theme="dark"] .feature-card i {
+  color: #7ea6ff !important;
+}
+
+/* Dark mode: Contact page styling */
+:root[data-theme="dark"] .page-contact .card {
+  background: rgba(255,255,255,0.05) !important;
+  border: 2px solid #7ea6ff !important;
+  color: #ffffff !important;
+}
+
+:root[data-theme="dark"] .page-contact .card:hover {
+  border-color: #9b83ff !important;
+}
+
+:root[data-theme="dark"] .page-contact .form-control {
+  background: rgba(255,255,255,0.1) !important;
+  border: 1px solid rgba(255,255,255,0.2) !important;
+  color: #ffffff !important;
+}
+
+:root[data-theme="dark"] .page-contact .form-control::placeholder {
+  color: rgba(255,255,255,0.7) !important;
+}
+
+:root[data-theme="dark"] .page-contact label {
+  color: #ffffff !important;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .hero {
+    padding-top: 32px;
+    padding-bottom: 32px;
+  }
+  
+  .mini-card {
+    padding: 16px;
+  }
+  
+  .card {
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero {
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+  
+  .btn-primary {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}
+
+/* Smooth transitions */
+* {
+  transition: all 0.18s ease;
+}

@@ -1,0 +1,483 @@
+:root{
+  --accent: #5b8def;
+  --accent-2: #6d4cff;
+  --muted: #6c757d;
+  --card-radius: 12px;
+  --glass: rgba(255,255,255,0.7);
+}
+
+/* Dark theme variables */
+:root[data-theme="dark"]{
+  --accent: #7ea6ff;
+  --accent-2: #9b83ff;
+  --muted: #bfc4cc;
+  background-color: #0f1724;
+  color: #e6eef9;
+}
+
+/* Base */
+*{box-sizing:border-box}
+body{
+  font-family: 'Poppins', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: linear-gradient(180deg, #f8fbff 0%, #ffffff 100%);
+  color: #111827;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+/* Navbar brand icon */
+.brand-icon{
+  width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent-2));color:white;
+  display:inline-flex;align-items:center;justify-content:center;font-size:18px;
+  box-shadow: 0 6px 18px rgba(91,141,239,0.18);
+}
+
+/* Hero */
+.hero{
+  padding-top:48px;
+  padding-bottom:40px;
+}
+.hero .hero-card{
+  border-radius:16px; overflow:hidden; transform:translateY(0);
+  transition: transform .35s ease, box-shadow .35s ease;
+  border: none;
+}
+.hero .hero-card:hover{ transform: translateY(-6px); box-shadow: 0 20px 50px rgba(13,49,85,0.12); }
+
+/* Mini info boxes on hero */
+.mini-card{
+  background:linear-gradient(180deg,#fff,#fbfdff);
+  border-radius:10px;
+}
+
+/* Feature card style — box-like */
+.feature-card, .service-card, .team-card, .mini-card, .box-info{
+  border-radius:12px;
+  background:white;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.feature-card:hover, .service-card:hover, .team-card:hover, .mini-card:hover{
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(13,49,85,0.08);
+}
+
+/* Icons inside cards */
+.feature-card .icon, .service-card i{
+  color: var(--accent);
+  font-size: 28px;
+}
+
+/* Small box stats (about page) */
+.box-info{
+  background:linear-gradient(180deg,#fff,#fbfdff);
+  border-radius:10px;
+  text-align:center;
+}
+.box-info h5{ font-size:20px; margin-bottom:4px; }
+.box-info small{ color:var(--muted); }
+
+/* Card shadows and consistent padding */
+.card{
+  border-radius: var(--card-radius);
+}
+
+/* footer */
+footer{ border-top:1px solid rgba(10,20,40,0.04); }
+
+/* Responsive tweaks */
+@media (max-width: 991px){
+  .hero{ padding-top:30px; padding-bottom:30px; }
+}
+
+/* Mobile menu icon - white in dark mode */
+:root[data-theme="dark"] .navbar .navbar-toggler {
+  border-color: rgba(255,255,255,0.5);
+}
+:root[data-theme="dark"] .navbar .navbar-toggler .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255,1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E") !important;
+  filter: none !important;
+}
+
+/* Responsive improvements for all screen sizes */
+@media (max-width: 1200px) {
+  .hero .display-5 { font-size: 2.5rem; }
+  .hero .lead { font-size: 1.1rem; }
+  .feature-card, .service-card { min-height: 300px; }
+}
+
+@media (max-width: 992px) {
+  .hero .display-5 { font-size: 2.1rem; }
+  .hero .lead { font-size: 1rem; }
+  .hero .btn-lg { padding: 0.6rem 1.2rem; font-size: 1rem; }
+  .feature-card, .service-card { min-height: 280px; }
+  
+  /* Navbar responsive adjustments */
+  .navbar .nav-link { padding: 0.4rem 0.8rem; margin: 0 0.1rem; }
+  :root[data-theme="dark"] .navbar .nav-link { padding: 0.4rem 0.8rem; margin: 0 0.1rem; }
+}
+
+@media (max-width: 768px) {
+  .hero { padding-top: 20px; padding-bottom: 20px; }
+  .hero .display-5 { font-size: 1.8rem; line-height: 1.2; }
+  .hero .lead { font-size: 0.95rem; }
+  .hero .btn-lg { padding: 0.5rem 1rem; font-size: 0.9rem; }
+  .feature-card, .service-card { min-height: 250px; padding: 1rem; }
+  
+  /* Mobile navbar adjustments */
+  .navbar .navbar-brand .fw-bold { font-size: 1.1rem; }
+  .navbar .btn { padding: 0.4rem 0.8rem; font-size: 0.85rem; }
+  :root[data-theme="dark"] .navbar .nav-link { 
+    padding: 0.5rem 0.8rem; 
+    margin: 0.2rem 0; 
+    display: block;
+    text-align: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero .display-5 { font-size: 1.6rem; }
+  .hero .lead { font-size: 0.9rem; }
+  .hero .btn-lg { padding: 0.45rem 0.9rem; font-size: 0.85rem; }
+  .feature-card, .service-card { min-height: 220px; padding: 0.8rem; }
+  
+  /* Mobile card content adjustments */
+  .feature-card h5, .service-card h5 { font-size: 1.1rem; }
+  .feature-card p, .service-card p { font-size: 0.9rem; }
+  .feature-card .icon, .service-card i { font-size: 24px; }
+  
+  /* Mobile navbar brand */
+  .navbar .navbar-brand .fw-bold { font-size: 1rem; }
+  .brand-icon { width: 36px; height: 36px; font-size: 16px; }
+}
+
+/* Dark mode responsive adjustments */
+@media (max-width: 768px) {
+  :root[data-theme="dark"] .hero h1,
+  :root[data-theme="dark"] .hero p,
+  :root[data-theme="dark"] .hero .lead {
+    font-size: inherit;
+  }
+  
+  :root[data-theme="dark"] .navbar .nav-link {
+    background: rgba(255,255,255,0.05) !important;
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+  
+  :root[data-theme="dark"] .navbar .nav-link:hover {
+    background: rgba(255,255,255,0.1) !important;
+    transform: scale(1.02);
+  }
+}
+
+/* Theme: dark styles applied when data-theme=dark on root */
+:root[data-theme="dark"] body {
+  background: #071123;
+  color: #e6eef9;
+}
+
+/* Dark mode: About page specific overrides - higher specificity */
+:root[data-theme="dark"] .page-about body {
+  background: #071123;
+  color: #e6eef9;
+}
+
+/* Dark mode: About page "Who we are" section - white text */
+:root[data-theme="dark"] .page-about section.py-5:first-of-type h2,
+:root[data-theme="dark"] .page-about section.py-5:first-of-type p,
+:root[data-theme="dark"] .page-about section.py-5:first-of-type .text-muted,
+:root[data-theme="dark"] .page-about section.py-5:first-of-type li,
+:root[data-theme="dark"] .page-about section.py-5:first-of-type h5,
+:root[data-theme="dark"] .page-about section.py-5:first-of-type small {
+  color: #ffffff !important;
+}
+
+/* Dark mode: About page "Our Services" section - transparent background */
+:root[data-theme="dark"] .page-about section.py-5.bg-light {
+  background: transparent !important;
+}
+
+/* Dark mode: About page service cards - navy blue background with white text */
+:root[data-theme="dark"] .page-about .service-card {
+  background: #0f1e3a !important; /* navy blue */
+  border-color: rgba(126,166,255,0.18) !important;
+}
+:root[data-theme="dark"] .page-about .service-card h5,
+:root[data-theme="dark"] .page-about .service-card p,
+:root[data-theme="dark"] .page-about .service-card small,
+:root[data-theme="dark"] .page-about .service-card a {
+  color: #ffffff !important; /* white text */
+}
+:root[data-theme="dark"] .page-about .service-card .text-muted {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+:root[data-theme="dark"] .page-about .service-card a.small {
+  color: #7ea6ff !important; /* blue links */
+}
+:root[data-theme="dark"] .page-about .service-card a.small:hover {
+  color: #9b83ff !important; /* purple on hover */
+}
+:root[data-theme="dark"] .page-about .service-card i {
+  color: #7ea6ff !important; /* blue icons */
+}
+
+/* Dark mode: About page team section - white text */
+:root[data-theme="dark"] .page-about .team-card h6,
+:root[data-theme="dark"] .page-about .team-card small,
+:root[data-theme="dark"] .page-about .team-card p {
+  color: #ffffff !important;
+}
+
+/* Dark mode: Footer - navy blue background */
+:root[data-theme="dark"] footer {
+  background: #0f1e3a !important; /* navy blue */
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+:root[data-theme="dark"] footer p,
+:root[data-theme="dark"] footer a,
+:root[data-theme="dark"] footer strong {
+  color: #ffffff !important;
+}
+:root[data-theme="dark"] footer a:hover {
+  color: #7ea6ff !important;
+}
+
+/* General dark mode card styling - lower specificity */
+:root[data-theme="dark"] .feature-card, :root[data-theme="dark"] .service-card, :root[data-theme="dark"] .mini-card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border: 1px solid rgba(255,255,255,0.03);
+}
+
+/* Dark mode: ensure ALL home page text is white and clearly visible */
+:root[data-theme="dark"] .hero h1,
+:root[data-theme="dark"] .hero p,
+:root[data-theme="dark"] .hero .lead,
+:root[data-theme="dark"] .hero .text-muted,
+:root[data-theme="dark"] .hero h6,
+:root[data-theme="dark"] .hero small,
+:root[data-theme="dark"] .hero .card-title,
+:root[data-theme="dark"] .hero .card-text,
+:root[data-theme="dark"] .hero .btn,
+:root[data-theme="dark"] .hero .btn-outline-secondary {
+  color: #ffffff !important;
+}
+
+:root[data-theme="dark"] .hero .btn-outline-secondary {
+  border-color: rgba(255,255,255,0.3);
+  color: #ffffff !important;
+}
+:root[data-theme="dark"] .hero .btn-outline-secondary:hover {
+  background: rgba(255,255,255,0.1);
+  border-color: rgba(255,255,255,0.5);
+  color: #ffffff !important;
+}
+
+/* Features section: transparent background in dark mode */
+:root[data-theme="dark"] #features {
+  background: transparent !important;
+}
+
+/* Features section cards: navy blue background with white text in dark mode */
+:root[data-theme="dark"] #features .feature-card {
+  background: #0f1e3a !important; /* navy blue */
+  border-color: rgba(126,166,255,0.18) !important;
+}
+:root[data-theme="dark"] #features .feature-card h5,
+:root[data-theme="dark"] #features .feature-card p,
+:root[data-theme="dark"] #features .feature-card small,
+:root[data-theme="dark"] #features .feature-card a {
+  color: #ffffff !important;
+}
+:root[data-theme="dark"] #features .feature-card .text-muted {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+:root[data-theme="dark"] #features .feature-card a.small {
+  color: #7ea6ff !important; /* link in blue */
+}
+:root[data-theme="dark"] #features .feature-card a.small:hover {
+  color: #9b83ff !important; /* hover to bluish purple */
+}
+:root[data-theme="dark"] #features .feature-card .icon {
+  color: #7ea6ff !important;
+}
+
+/* Dark mode: Footer styling - light navy blue background with white text */
+:root[data-theme="dark"] footer {
+  background: #1e3a5f !important; /* light navy blue */
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+:root[data-theme="dark"] footer p,
+:root[data-theme="dark"] footer a,
+:root[data-theme="dark"] footer strong {
+  color: #ffffff !important;
+}
+:root[data-theme="dark"] footer a:hover {
+  color: #7ea6ff !important;
+}
+
+/* Dark mode: Navbar transparent background */
+:root[data-theme="dark"] .navbar {
+  background: transparent !important;
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+/* Dark mode: Navbar links as buttons with light greyish background */
+:root[data-theme="dark"] .navbar .nav-link {
+  background: rgba(255,255,255,0.1) !important; /* light greyish */
+  color: #ffffff !important; /* white text */
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  margin: 0 0.25rem;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  border: 1px solid rgba(255,255,255,0.2);
+}
+:root[data-theme="dark"] .navbar .nav-link:hover {
+  background: rgba(255,255,255,0.15) !important;
+  color: #9b83ff !important; /* purple on hover */
+  transform: scale(1.05);
+  font-size: 1.05em;
+  border-color: rgba(155,131,255,0.3);
+}
+:root[data-theme="dark"] .navbar .nav-link.active {
+  background: rgba(126,166,255,0.2) !important;
+  color: #7ea6ff !important;
+  border-color: rgba(126,166,255,0.4);
+}
+
+/* Dark mode: Navbar brand text styling */
+:root[data-theme="dark"] .navbar .navbar-brand .fw-bold {
+  color: #ffffff !important; /* white text for Medly */
+  font-weight: 600;
+}
+
+/* Dark mode: About page "Who we are" section - white text */
+:root[data-theme="dark"] .page-about section.py-5:first-of-type h2,
+:root[data-theme="dark"] .page-about section.py-5:first-of-type p,
+:root[data-theme="dark"] .page-about section.py-5:first-of-type .text-muted,
+:root[data-theme="dark"] .page-about section.py-5:first-of-type li,
+:root[data-theme="dark"] .page-about section.py-5:first-of-type h5,
+:root[data-theme="dark"] .page-about section.py-5:first-of-type small {
+  color: #ffffff !important;
+}
+
+/* Dark mode: About page "Our Services" section - transparent background */
+:root[data-theme="dark"] .page-about section.py-5.bg-light {
+  background: transparent !important;
+}
+
+/* Dark mode: About page service cards - navy blue background with white text */
+:root[data-theme="dark"] .page-about .service-card {
+  background: #0f1e3a !important; /* navy blue */
+  border-color: rgba(126,166,255,0.18) !important;
+}
+:root[data-theme="dark"] .page-about .service-card h5,
+:root[data-theme="dark"] .page-about .service-card p,
+:root[data-theme="dark"] .page-about .service-card small,
+:root[data-theme="dark"] .page-about .service-card a {
+  color: #ffffff !important; /* white text */
+}
+:root[data-theme="dark"] .page-about .service-card .text-muted {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+:root[data-theme="dark"] .page-about .service-card a.small {
+  color: #7ea6ff !important; /* blue links */
+}
+:root[data-theme="dark"] .page-about .service-card a.small:hover {
+  color: #9b83ff !important; /* purple on hover */
+}
+:root[data-theme="dark"] .page-about .service-card i {
+  color: #7ea6ff !important; /* blue icons */
+}
+
+/* Dark mode: About page team section - white text */
+:root[data-theme="dark"] .page-about .team-card h6,
+:root[data-theme="dark"] .page-about .team-card small,
+:root[data-theme="dark"] .page-about .team-card p {
+  color: #ffffff !important;
+}
+
+/* Dark mode: Footer - navy blue background */
+:root[data-theme="dark"] footer {
+  background: #0f1e3a !important; /* navy blue */
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+:root[data-theme="dark"] footer p,
+:root[data-theme="dark"] footer a,
+:root[data-theme="dark"] footer strong {
+  color: #ffffff !important;
+}
+:root[data-theme="dark"] footer a:hover {
+  color: #7ea6ff !important;
+}
+
+/* Buttons */
+.btn-primary{
+  background: linear-gradient(90deg,var(--accent),var(--accent-2));
+  border: none;
+  box-shadow: 0 8px 24px rgba(91,141,239,0.15);
+}
+.btn-outline-primary{
+  border-color: rgba(91,141,239,0.14);
+}
+
+/* small helper */
+.text-white-50{ color: rgba(255,255,255,0.85); }
+
+/* Make iframes responsive */
+iframe{ border-radius:8px; }
+
+/* Form invalid show */
+.was-validated .form-control:invalid {
+  border-color: #dc3545;
+  box-shadow: none;
+}
+
+/* subtle transition for everything to feel smooth */
+*{ transition: all 0.18s ease; }
+
+/* Dark mode: About page specific styling - high specificity */
+:root[data-theme="dark"] .page-about section.py-5:first-of-type h2,
+:root[data-theme="dark"] .page-about section.py-5:first-of-type p,
+:root[data-theme="dark"] .page-about section.py-5:first-of-type .text-muted,
+:root[data-theme="dark"] .page-about section.py-5:first-of-type li,
+:root[data-theme="dark"] .page-about section.py-5:first-of-type h5,
+:root[data-theme="dark"] .page-about section.py-5:first-of-type small {
+  color: #ffffff !important;
+}
+
+/* Dark mode: About page services section - transparent background */
+:root[data-theme="dark"] .page-about section.py-5.bg-light {
+  background: transparent !important;
+}
+
+/* Dark mode: About page service cards - navy blue background with white text */
+:root[data-theme="dark"] .page-about .service-card {
+  background: #0f1e3a !important;
+  border-color: rgba(126,166,255,0.18) !important;
+}
+:root[data-theme="dark"] .page-about .service-card h5,
+:root[data-theme="dark"] .page-about .service-card p,
+:root[data-theme="dark"] .page-about .service-card small,
+:root[data-theme="dark"] .page-about .service-card a {
+  color: #ffffff !important;
+}
+:root[data-theme="dark"] .page-about .service-card .text-muted {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+:root[data-theme="dark"] .page-about .service-card a.small {
+  color: #7ea6ff !important;
+}
+:root[data-theme="dark"] .page-about .service-card a.small:hover {
+  color: #9b83ff !important;
+}
+:root[data-theme="dark"] .page-about .service-card i {
+  color: #7ea6ff !important;
+}
+
+/* Dark mode: About page team section - white text */
+:root[data-theme="dark"] .page-about .team-card h6,
+:root[data-theme="dark"] .page-about .team-card small,
+:root[data-theme="dark"] .page-about .team-card p {
+  color: #ffffff !important;
+}
